@@ -2,11 +2,11 @@ import { render, screen } from "@testing-library/react";
 import RepositoriesListItem from '../repositories/RepositoriesListItem';
 import { MemoryRouter } from "react-router-dom";
 
-jest.mock('../tree/FileIcon.js',()=>{
-  return ()=>{
-    return 'File Icon Component'
-  }
-})
+// jest.mock('../tree/FileIcon.js',()=>{
+//   return ()=>{
+//     return 'File Icon Component'
+//   }
+// })
 
 const RenderComponent = () => {
   const repository = {
@@ -23,7 +23,7 @@ const RenderComponent = () => {
     </MemoryRouter>
   )
 };
-test("shows a link to the github homepage for this repository", () => {
+test("shows a link to the github homepage for this repository", async () => {
   RenderComponent();
-  // screen.findByRole('img',{name:'Javascript'});
+  await  screen.findByRole('img',{name:'Javascript'});
 });
